@@ -13,10 +13,10 @@ https://www.postman.com/downloads
    Post out any queries on [Community](https://community.postman.com/tag/training)
 
 # Reference Collections
-https://explore.postman.com/subdex
+[Postman Explore](https://explore.postman.com/subdex)
 
 # Reference Videos
-https://www.youtube.com/channel/UCJzUxWQurOcy_WwBnFARq0g
+[Kurmavathar](https://www.youtube.com/channel/UCJzUxWQurOcy_WwBnFARq0g)
 
 # Good Documentation
-https://documenter.getpostman.com/view/1559645/TVYGbHs1
+[Checklist for Good documentation](https://documenter.getpostman.com/view/1559645/TVYGbHs1)
