@@ -7,7 +7,9 @@ https://www.postman.com/downloads
 # Learn Postman
 1) Bootcamp Lessons
 2) [Student Expert Program](https://www.postman.com/company/student-program)
+
    [Student Expert Collection](https://explore.postman.com/templates/11859/student-expert)
+   
    Post out any queries on [Community](https://community.postman.com/tag/training)
 
 # Reference Collections
