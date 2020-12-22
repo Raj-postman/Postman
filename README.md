@@ -12,6 +12,10 @@ https://www.postman.com/downloads
    
    Post out any queries on [Community](https://community.postman.com/tag/training)
 
+# Postman Public profile
+Get your now >
+https://www.postman.com/subdex
+
 # Reference Collections
 [Postman Explore](https://explore.postman.com/subdex)
 
