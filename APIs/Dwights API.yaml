@@ -1,0 +1,376 @@
+openapi: 3.0.3
+info:
+  title: Dwights Collection
+  version: 1.0.0
+  description: >-
+    This collection helps me schedule my time better dodging Jim's stupid
+    pranks. I have mentioned Michael to take a look at this collection but he is
+    still getting started with Powerpoint,scoffs!
+servers:
+  - url: '{{base_url}}'
+paths:
+  /plan/fail:
+    get:
+      tags:
+        - Diabolical Plan
+      summary: Plans Failed
+      description: These plans failed. Do not try them again.
+      responses:
+        '406':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Malard:
+                    type: string
+                  Comment:
+                    type: string
+                  Results:
+                    type: string
+              example:
+                Malard: This was a bait and planned for a failure
+                Comment: 'Since I lose, can''t take up this point'
+                Results: 'Jim -1, Dwight - 0'
+          description: Fail
+  /plan/success:
+    get:
+      tags:
+        - Diabolical Plan
+      summary: Plans Succeeded
+      description: My best plans are always the one that comes after I plan my own failure.
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Microphone in Pen:
+                    type: string
+                  Comment:
+                    type: string
+                  Results:
+                    type: string
+              example:
+                Microphone in Pen: That's how its done
+                Comment: >-
+                  Although David wallace backed up the loser. I succeeded in the
+                  voice capture
+                Results: 'Jim - 1, Dwight - 1'
+          description: Success
+  /plan/add:
+    post:
+      tags:
+        - Diabolical Plan
+      summary: Suggest plan
+      description: >-
+        Although Ryan has teamed up with him, I do not trust him. Neither do I
+        believe you. Yet I give you a chance to share your idea into the next
+        Feature plan Jims Downfall. Please share them with us. {+Mose}
+
+
+        Contact details:
+
+        Mose: +1{Call Dwight}
+
+        Who gives him a phone?
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: color
+                Name:
+                  type: string
+                Plan:
+                  type: string
+            example:
+              id: '001'
+              Name: Anonymous
+              Plan: Take him to Shrute farm and abandon
+      responses:
+        '202':
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Suggest plan
+  /complaint/list:
+    get:
+      tags:
+        - Complaints against Jim
+      summary: List of Complaints
+      description: >-
+        Four years of malfeasance.
+
+
+        Unfair methods are the first view. Jim keeps troubling and spending
+        company time in rather useless things which mostly is pranking on me.
+      responses:
+        '404':
+          content:
+            application/json:
+              schema: {}
+              example:
+                List:
+                  - 1. Replaced all of Dwight's pens and pencils with crayons
+                  - >-
+                    2. Jim paid everyone five dollars so they would call Dwight:
+                    Dwayne
+                  - >-
+                    3. Placed a bloody glove in Dwight's desk drawer and tried
+                    to convince him he committed murder
+                  - >-
+                    4. Told Dwight there was an abandoned infant in the women's
+                    bathroom, thus tricking him into going to the bathroom and
+                    seeing Meredith on the can
+                  - >-
+                    5. Dwight hit himself in the head with his phone (Jim kept
+                    putting nickels into the handset until Dwight got used to
+                    the weight; Jim then abruptly removed all of the nickels;
+                    Dwight went to pick up the phone, and believing the phone
+                    was heavy, pulled it very hard)
+                  - 6. Every time Dwight typed his name it came out as Diapers
+                  - >-
+                    7. By the end of the day, Dwight's desk was moved two feet
+                    closer to the copier
+          description: Complaints
+          headers:
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+  /retrieve/branch_list:
+    get:
+      tags:
+        - Complaints against Jim
+      summary: Transfer Jim
+      description: >-
+        Few branches I think Jim would be best placed, anything other than
+        Scranton.
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Active:
+                    type: array
+                    items:
+                      type: string
+                  Inactive:
+                    type: array
+                    items:
+                      type: string
+              example:
+                Active:
+                  - Scranton
+                  - Akron
+                  - Albany
+                  - Nashua
+                  - New York (Corporate HQ)
+                Inactive:
+                  - Binghamton branch
+                  - Buffalo branch
+                  - Camden branch
+                  - Northeast branch
+                  - Pittsfield branch
+                  - Stamford branch
+                  - Yonkers branch
+          description: Branch list
+  /retrieve/transfer:
+    get:
+      tags:
+        - Complaints against Jim
+      summary: Jobs for Jim
+      description: >-
+        Although I believe Jim is average and takes all of the credits due to
+        his Height and Cuteness, these are list of jobs he would be best fit
+        for. 
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Branch:
+                    type: string
+                  Title:
+                    type: string
+              example:
+                Branch: Stamford
+                Title: Sales manager
+          description: Transfer
+  /complaint/add:
+    post:
+      tags:
+        - Complaints against Jim
+      summary: Place your complaint
+      description: |-
+        I'm pretty sure you all hate Jim.
+        So please file a complaint here, I'll transfer them to Toby.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: color
+                Name:
+                  type: string
+                Complaint:
+                  type: string
+                Remedy:
+                  type: string
+            example:
+              id: '001'
+              Name: Anonymous
+              Complaint: xyyzz
+              Remedy: Fire Jim
+      responses:
+        '201':
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: New Complaint
+          headers:
+            Date:
+              schema:
+                type: string
+                format: style
+              example: 'Tue, 22 Dec 2020 09:45:40 GMT'
+            Transfer-Encoding:
+              schema:
+                type: string
+              example: chunked
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+            Server:
+              schema:
+                type: string
+              example: nginx
+            x-srv-trace:
+              schema:
+                type: string
+              example: v=1;t=fd151c9df2e451f5
+            x-srv-span:
+              schema:
+                type: string
+              example: v=1;s=d7a2c4e9c112524e
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              example: '*'
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+              example: 120
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+              example: 119
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+              example: 1608630400
+            ETag:
+              schema:
+                type: string
+              example: W/"96-S/5iQ2y1qqIInh5BwoPc+chvDJU"
+            Vary:
+              schema:
+                type: string
+              example: Accept-Encoding
+            Content-Encoding:
+              schema:
+                type: string
+              example: gzip
+  /project/subject:
+    get:
+      tags:
+        - Earth Day
+      summary: Recyclops
+      description: >-
+        I take Earth Day very seriously and stand by companies Recycling program
+        for Earth.
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Recyclops
+  /project/martialArt:
+    get:
+      tags:
+        - Office projects
+      summary: World of Karate - Seminar
+      description: Special training.
+      parameters:
+        - name: x-mock-match-request-body
+          in: header
+          schema:
+            type: boolean
+          example: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Level:
+                  type: string
+            example:
+              Level: Pro
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Awareness:
+                    type: string
+              example:
+                Awareness: Advancements in the world of Martial arts
+          description: Master Fight
+components: {}
+tags:
+  - name: Diabolical Plan
+    description: >-
+      Take Jim Halpert Down.
+
+
+      Notes: Ryan wants to join in. Can't refuse.
+
+      Enemy of an Enemy is a friend.
+
+
+      Besides that Jim is his own enemy. Wait.. Does that make him my friend?
+      But he is my friend who is an enemy of my enemy which is Jim... Ah! Hmm..
+  - name: Complaints against Jim
+    description: >-
+      These have to be filed and submitted to Toby Flenderson who then forwards
+      it to corporate.
+  - name: Earth Day
+    description: >-
+      I actively participated in the Office project and this is my idea. Safe
+      mother Earth.
+  - name: Office projects
+    description: >-
+      Numerous number of projects I enrolled or initiate apart from selling
+      papers.
