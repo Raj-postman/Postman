@@ -13,11 +13,9 @@ https://www.postman.com/downloads
    Post out any queries on [Community](https://community.postman.com/tag/training)
 
 # Postman Public profile
-Get your now >
-https://www.postman.com/subdex
+Get yours now >
 
-# Reference Collections
-[Postman Explore](https://explore.postman.com/subdex)
+https://www.postman.com/subdex
 
 # Reference Videos
 [Kurmavathar](https://www.youtube.com/channel/UCJzUxWQurOcy_WwBnFARq0g)
