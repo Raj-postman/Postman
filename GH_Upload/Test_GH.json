@@ -1,0 +1,2796 @@
+{
+  "info": {
+    "_postman_id": "a1c278cd-5c63-4cd9-b08f-5ec2422b185c",
+    "name": "Garbled",
+    "description": "This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.\n\nContact Support:\n Email: apiteam@swagger.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "pet",
+      "item": [
+        {
+          "name": "{pet Id}",
+          "item": [
+            {
+              "name": "Find pet by ID",
+              "_postman_id": "1bb42e2a-2ba2-4e4b-95cf-62ffac26963b",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/pet/:petId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "pet",
+                    ":petId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "38abba4e-bc1b-4dfa-af93-52f993191841",
+                      "key": "petId",
+                      "value": "<string>",
+                      "type": "string",
+                      "description": "(Required) (Required) ID of pet to return"
+                    }
+                  ]
+                },
+                "description": "Returns a single pet"
+              },
+              "response": [
+                {
+                  "id": "671560e4-1161-4d5d-a973-f06a771f62cd",
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/pet/:petId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "pet",
+                        ":petId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "petId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}"
+                },
+                {
+                  "id": "82956936-f50e-4382-a853-806ba876075c",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/pet/:petId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "pet",
+                        ":petId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "petId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}"
+                },
+                {
+                  "id": "a70e772e-1d47-4c32-a291-e4f60959a61c",
+                  "name": "response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/pet/:petId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "pet",
+                        ":petId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "petId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n \"name\": \"doggie\",\n \"photoUrls\": [\n  \"<string>\",\n  \"<string>\"\n ],\n \"id\": \"<long>\",\n \"category\": {\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n },\n \"tags\": [\n  {\n   \"id\": \"<long>\",\n   \"name\": \"<string>\"\n  },\n  {\n   \"id\": \"<long>\",\n   \"name\": \"<string>\"\n  }\n ],\n \"status\": \"<string>\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Updates a pet in the store with form data",
+              "_postman_id": "d286f6b3-64ab-4f61-a73c-3f80098d3e75",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "Updated name of the pet"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>",
+                      "description": "Updated status of the pet"
+                    }
+                  ],
+                  "options": {
+                    "urlencoded": {}
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/pet/:petId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "pet",
+                    ":petId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "6ddf4a43-a2dd-49d4-951d-8509639f20d8",
+                      "key": "petId",
+                      "value": "<string>",
+                      "type": "string",
+                      "description": "(Required) (Required) ID of pet that needs to be updated"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "3705f48c-7a13-4a9e-889f-43f0956817e4",
+                  "name": "Method Not Allowed",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "Content-Type",
+                        "value": "<string>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "description": {
+                            "content": "Updated name of the pet",
+                            "type": "text/plain"
+                          },
+                          "key": "name",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": {
+                            "content": "Updated status of the pet",
+                            "type": "text/plain"
+                          },
+                          "key": "status",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/pet/:petId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "pet",
+                        ":petId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "petId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Method Not Allowed",
+                  "code": 405,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}"
+                },
+                {
+                  "id": "88fa76f4-2fd0-44bf-a949-f1607d25fca0",
+                  "name": "response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "Content-Type",
+                        "value": "<string>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "description": {
+                            "content": "Updated name of the pet",
+                            "type": "text/plain"
+                          },
+                          "key": "name",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": {
+                            "content": "Updated status of the pet",
+                            "type": "text/plain"
+                          },
+                          "key": "status",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/pet/:petId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "pet",
+                        ":petId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "petId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/plain"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "Deletes a pet",
+              "_postman_id": "2ecccc3c-b89a-43c3-a6ec-d09ef74749d7",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "api_key",
+                    "value": "<string>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/pet/:petId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "pet",
+                    ":petId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "7578900a-2924-483f-8444-19607c96304a",
+                      "key": "petId",
+                      "value": "<string>",
+                      "type": "string",
+                      "description": "(Required) (Required) Pet id to delete"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "94590e43-ff68-4ab3-b3d3-0615db0fdace",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "api_key",
+                        "value": "<string>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/pet/:petId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "pet",
+                        ":petId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "petId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}"
+                },
+                {
+                  "id": "a4266d87-bcba-4997-986d-3575876f3949",
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "api_key",
+                        "value": "<string>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/pet/:petId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "pet",
+                        ":petId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "petId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}"
+                },
+                {
+                  "id": "f26c5511-602e-4817-a6f9-b7135218c276",
+                  "name": "response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "api_key",
+                        "value": "<string>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/pet/:petId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "pet",
+                        ":petId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "petId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/plain"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "uploads an image",
+              "_postman_id": "33eccd2d-76fa-470d-9aed-31817627e10b",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "multipart/form-data"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "additionalMetadata",
+                      "value": "<string>",
+                      "type": "text",
+                      "description": "Additional data to pass to server"
+                    },
+                    {
+                      "key": "file",
+                      "value": "<string>",
+                      "type": "text",
+                      "description": "file to upload"
+                    }
+                  ],
+                  "options": {
+                    "formdata": {}
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/pet/:petId/uploadImage",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "pet",
+                    ":petId",
+                    "uploadImage"
+                  ],
+                  "variable": [
+                    {
+                      "id": "eb7e8d8e-253a-4c29-8ce8-14aba6001cd8",
+                      "key": "petId",
+                      "value": "<string>",
+                      "type": "string",
+                      "description": "(Required) (Required) ID of pet to update"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "cc61a8b0-9e9a-4af2-9d42-c454b562cb3a",
+                  "name": "response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "Content-Type",
+                        "value": "<string>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "description": {
+                            "content": "Additional data to pass to server",
+                            "type": "text/plain"
+                          },
+                          "key": "additionalMetadata",
+                          "value": "<string>",
+                          "type": "text"
+                        },
+                        {
+                          "description": {
+                            "content": "file to upload",
+                            "type": "text/plain"
+                          },
+                          "key": "file",
+                          "value": "<string>",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/pet/:petId/uploadImage",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "pet",
+                        ":petId",
+                        "uploadImage"
+                      ],
+                      "variable": [
+                        {
+                          "key": "petId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n \"code\": -87889892,\n \"type\": \"velit in fugiat\",\n \"message\": \"in in qui irure\"\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "5e44c328-5e32-47f7-a75a-967befcf04d9",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Add a new pet to the store",
+          "_postman_id": "8ea56e98-25da-430d-b140-3ca2f9402911",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "Content-Type",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"<string>\",\n    \"photoUrls\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"id\": \"<string>\",\n    \"category\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n    },\n    \"tags\": [\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        },\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        }\n    ],\n    \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {}
+              }
+            },
+            "url": "{{baseUrl}}/pet",
+            "description": "\n### Example\n\n```json\n{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 581,\n        \"email\": \"meetrack1589173930698@meetrack.jp\",\n        \"firstName\": \"\u6e21\u90e8\",\n        \"lastName\": \"\u5065\u2f00\",\n        \"furiganaFirstName\": \"\u30ef\u30bf\u30ca\u30d9\",\n        \"furiganaLastName\": \"\u30b1\u30f3\u30a4\u30c1\",\n        \"gender\": \"male\",\n        \"birthday\": \"2020-10-19T17:00:00.000Z\",\n        \"avatarFileId\": null,\n        \"phone\": \"\"\n    }\n}\n```"
+          },
+          "response": [
+            {
+              "id": "53a55482-8a5a-4320-97d0-058bb8a38ae9",
+              "name": "response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"<string>\",\n    \"photoUrls\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"id\": \"<string>\",\n    \"category\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n    },\n    \"tags\": [\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        },\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        }\n    ],\n    \"status\": \"<string>\"\n}"
+                },
+                "url": "{{baseUrl}}/pet"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "d8c6bbdc-5e12-4410-a827-497e3be0cad4",
+              "name": "Method Not Allowed",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"<string>\",\n    \"photoUrls\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"id\": \"<string>\",\n    \"category\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n    },\n    \"tags\": [\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        },\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        }\n    ],\n    \"status\": \"<string>\"\n}"
+                },
+                "url": "{{baseUrl}}/pet"
+              },
+              "status": "Method Not Allowed",
+              "code": 405,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}"
+            }
+          ]
+        },
+        {
+          "name": "Update an existing pet",
+          "_postman_id": "f39f199a-91de-4ddb-964c-02fbd0624c4d",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "Content-Type",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"<string>\",\n    \"photoUrls\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"id\": \"<string>\",\n    \"category\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n    },\n    \"tags\": [\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        },\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        }\n    ],\n    \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {}
+              }
+            },
+            "url": "{{baseUrl}}/pet"
+          },
+          "response": [
+            {
+              "id": "221d4879-de46-4f90-9fe8-5cf72699e93b",
+              "name": "response",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"<string>\",\n    \"photoUrls\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"id\": \"<string>\",\n    \"category\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n    },\n    \"tags\": [\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        },\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        }\n    ],\n    \"status\": \"<string>\"\n}"
+                },
+                "url": "{{baseUrl}}/pet"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "99dbffe6-5a15-4327-93d7-7343a9f01ad2",
+              "name": "Bad Request",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"<string>\",\n    \"photoUrls\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"id\": \"<string>\",\n    \"category\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n    },\n    \"tags\": [\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        },\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        }\n    ],\n    \"status\": \"<string>\"\n}"
+                },
+                "url": "{{baseUrl}}/pet"
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}"
+            },
+            {
+              "id": "d05b6ada-d21e-4550-96ac-75ae20fb780a",
+              "name": "Method Not Allowed",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"<string>\",\n    \"photoUrls\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"id\": \"<string>\",\n    \"category\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n    },\n    \"tags\": [\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        },\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        }\n    ],\n    \"status\": \"<string>\"\n}"
+                },
+                "url": "{{baseUrl}}/pet"
+              },
+              "status": "Method Not Allowed",
+              "code": 405,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}"
+            },
+            {
+              "id": "d4fe6a1a-50db-46b8-b4dd-e5b2bac6a805",
+              "name": "Not Found",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"<string>\",\n    \"photoUrls\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"id\": \"<string>\",\n    \"category\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\"\n    },\n    \"tags\": [\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        },\n        {\n            \"id\": \"<string>\",\n            \"name\": \"<string>\"\n        }\n    ],\n    \"status\": \"<string>\"\n}"
+                },
+                "url": "{{baseUrl}}/pet"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}"
+            }
+          ]
+        },
+        {
+          "name": "Finds Pets by status",
+          "_postman_id": "262af741-b4ce-4b6f-92f9-fe813aea65d6",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pet/findByStatus?status=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet",
+                "findByStatus"
+              ],
+              "query": [
+                {
+                  "description": "(Required) (Required) Status values that need to be considered for filter",
+                  "key": "status",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Multiple status values can be provided with comma separated strings"
+          },
+          "response": [
+            {
+              "id": "28b7fa92-8134-412e-b0cc-32428e41ce5a",
+              "name": "response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/pet/findByStatus?status=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "pet",
+                    "findByStatus"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n {\n  \"name\": \"doggie\",\n  \"photoUrls\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"id\": \"<long>\",\n  \"category\": {\n   \"id\": \"<long>\",\n   \"name\": \"<string>\"\n  },\n  \"tags\": [\n   {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n   },\n   {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n   }\n  ],\n  \"status\": \"<string>\"\n },\n {\n  \"name\": \"doggie\",\n  \"photoUrls\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"id\": \"<long>\",\n  \"category\": {\n   \"id\": \"<long>\",\n   \"name\": \"<string>\"\n  },\n  \"tags\": [\n   {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n   },\n   {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n   }\n  ],\n  \"status\": \"<string>\"\n }\n]"
+            },
+            {
+              "id": "c3cf0f00-c3d3-4284-919f-7826a315c115",
+              "name": "Bad Request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/pet/findByStatus?status=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "pet",
+                    "findByStatus"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}"
+            }
+          ]
+        },
+        {
+          "name": "Finds Pets by tags",
+          "_postman_id": "1485e46c-4bd8-4fe1-87be-ac591f8ab198",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pet/findByTags?tags=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet",
+                "findByTags"
+              ],
+              "query": [
+                {
+                  "description": "(Required) (Required) Tags to filter by",
+                  "key": "tags",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing."
+          },
+          "response": [
+            {
+              "id": "04dccbee-5766-4854-b52e-d584145f858c",
+              "name": "Bad Request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/pet/findByTags?tags=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "pet",
+                    "findByTags"
+                  ],
+                  "query": [
+                    {
+                      "key": "tags",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}"
+            },
+            {
+              "id": "a7ec7581-f9cb-4d0b-9ebe-6d5877004994",
+              "name": "response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/pet/findByTags?tags=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "pet",
+                    "findByTags"
+                  ],
+                  "query": [
+                    {
+                      "key": "tags",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n {\n  \"name\": \"doggie\",\n  \"photoUrls\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"id\": \"<long>\",\n  \"category\": {\n   \"id\": \"<long>\",\n   \"name\": \"<string>\"\n  },\n  \"tags\": [\n   {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n   },\n   {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n   }\n  ],\n  \"status\": \"<string>\"\n },\n {\n  \"name\": \"doggie\",\n  \"photoUrls\": [\n   \"<string>\",\n   \"<string>\"\n  ],\n  \"id\": \"<long>\",\n  \"category\": {\n   \"id\": \"<long>\",\n   \"name\": \"<string>\"\n  },\n  \"tags\": [\n   {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n   },\n   {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n   }\n  ],\n  \"status\": \"<string>\"\n }\n]"
+            }
+          ]
+        }
+      ],
+      "_postman_id": "96fe46f6-debd-4fa8-8ce6-ebe7bc793aab"
+    },
+    {
+      "name": "store",
+      "item": [
+        {
+          "name": "order",
+          "item": [
+            {
+              "name": "{order Id}",
+              "item": [
+                {
+                  "name": "Find purchase order by ID",
+                  "_postman_id": "d4e79434-7389-4318-ab93-4ad08199518b",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/store/order/:orderId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "store",
+                        "order",
+                        ":orderId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "f83ab8bd-4f5f-4bda-b796-1d5c7ff49d96",
+                          "key": "orderId",
+                          "value": "<string>",
+                          "type": "string",
+                          "description": "(Required) (Required) ID of pet that needs to be fetched"
+                        }
+                      ]
+                    },
+                    "description": "For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions"
+                  },
+                  "response": [
+                    {
+                      "id": "014a72af-75b6-4dc7-af26-2fb0e414b09d",
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: apikey",
+                              "type": "text/plain"
+                            },
+                            "key": "api_key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/store/order/:orderId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "store",
+                            "order",
+                            ":orderId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "orderId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}"
+                    },
+                    {
+                      "id": "0cf8f1f9-b60a-4f53-9a25-7f9b77c90bf4",
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: apikey",
+                              "type": "text/plain"
+                            },
+                            "key": "api_key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/store/order/:orderId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "store",
+                            "order",
+                            ":orderId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "orderId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}"
+                    },
+                    {
+                      "id": "8b4630fa-0723-48d4-9206-cd36eff18bc2",
+                      "name": "response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: apikey",
+                              "type": "text/plain"
+                            },
+                            "key": "api_key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/store/order/:orderId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "store",
+                            "order",
+                            ":orderId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "orderId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n \"id\": \"<long>\",\n \"petId\": \"<long>\",\n \"quantity\": \"<integer>\",\n \"shipDate\": \"<dateTime>\",\n \"status\": \"<string>\",\n \"complete\": \"<boolean>\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Delete purchase order by ID",
+                  "_postman_id": "bee188a2-0ab6-4455-b6a0-b8111fa1e5a5",
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/store/order/:orderId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "store",
+                        "order",
+                        ":orderId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "75a51776-58a7-40f0-a0d9-a840c5c3e209",
+                          "key": "orderId",
+                          "value": "<string>",
+                          "type": "string",
+                          "description": "(Required) (Required) ID of the order that needs to be deleted"
+                        }
+                      ]
+                    },
+                    "description": "For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors"
+                  },
+                  "response": [
+                    {
+                      "id": "4b1a3799-4d1a-4e3d-8865-64f4af996a4d",
+                      "name": "response",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: apikey",
+                              "type": "text/plain"
+                            },
+                            "key": "api_key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/store/order/:orderId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "store",
+                            "order",
+                            ":orderId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "orderId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "text/plain"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": ""
+                    },
+                    {
+                      "id": "91bd4815-8200-423f-b4dd-b7e1cce1df94",
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: apikey",
+                              "type": "text/plain"
+                            },
+                            "key": "api_key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/store/order/:orderId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "store",
+                            "order",
+                            ":orderId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "orderId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}"
+                    },
+                    {
+                      "id": "b3733cf1-afda-416b-8327-f1da9246c5bd",
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: apikey",
+                              "type": "text/plain"
+                            },
+                            "key": "api_key",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/store/order/:orderId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "store",
+                            "order",
+                            ":orderId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "orderId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}"
+                    }
+                  ]
+                }
+              ],
+              "_postman_id": "cfda3731-0be6-4690-94e9-0551d5c1d0cf",
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "Place an order for a pet",
+              "_postman_id": "bca5bbcd-213d-4ba8-9b6d-61820dff4bde",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"<string>\",\n    \"petId\": \"<string>\",\n    \"quantity\": \"<string>\",\n    \"shipDate\": \"<string>\",\n    \"status\": \"<string>\",\n    \"complete\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {}
+                  }
+                },
+                "url": "{{baseUrl}}/store/order"
+              },
+              "response": [
+                {
+                  "id": "98ea9017-edba-43f1-b6b4-07a729e4f81d",
+                  "name": "response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "Content-Type",
+                        "value": "<string>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"id\": \"<string>\",\n    \"petId\": \"<string>\",\n    \"quantity\": \"<string>\",\n    \"shipDate\": \"<string>\",\n    \"status\": \"<string>\",\n    \"complete\": \"<string>\"\n}"
+                    },
+                    "url": "{{baseUrl}}/store/order"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n \"id\": \"<long>\",\n \"petId\": \"<long>\",\n \"quantity\": \"<integer>\",\n \"shipDate\": \"<dateTime>\",\n \"status\": \"<string>\",\n \"complete\": \"<boolean>\"\n}"
+                },
+                {
+                  "id": "c85da7db-c8e0-4913-8e60-8b23b3708005",
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "Content-Type",
+                        "value": "<string>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"id\": \"<string>\",\n    \"petId\": \"<string>\",\n    \"quantity\": \"<string>\",\n    \"shipDate\": \"<string>\",\n    \"status\": \"<string>\",\n    \"complete\": \"<string>\"\n}"
+                    },
+                    "url": "{{baseUrl}}/store/order"
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "923b3f40-d572-46c4-b561-b2eb871e15fc",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Returns pet inventories by status",
+          "_postman_id": "7cc09d74-dd33-4cb3-9999-77b7445ccc5e",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/store/inventory",
+            "description": "Returns a map of status codes to quantities"
+          },
+          "response": [
+            {
+              "id": "88952fde-6005-4452-abd3-88ebccf45294",
+              "name": "response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": "{{baseUrl}}/store/inventory"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}"
+            }
+          ]
+        }
+      ],
+      "_postman_id": "fe567207-107d-46a7-b16b-aed339df4bae"
+    },
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "{username}",
+          "item": [
+            {
+              "name": "Get user by user name",
+              "_postman_id": "720d8ada-b9be-4f17-a62c-aabc47fcf29c",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/user/:username",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "user",
+                    ":username"
+                  ],
+                  "variable": [
+                    {
+                      "id": "cc08ab09-ddff-4a27-bbf3-e5b8a9b83259",
+                      "key": "username",
+                      "value": "<string>",
+                      "type": "string",
+                      "description": "(Required) (Required) The name that needs to be fetched. Use user1 for testing."
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "1c06a106-97ff-4b0f-a6f3-adee3de43eb1",
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/user/:username",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "user",
+                        ":username"
+                      ],
+                      "variable": [
+                        {
+                          "key": "username"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}"
+                },
+                {
+                  "id": "1e79399c-1f49-4995-9e09-254d796add14",
+                  "name": "response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/user/:username",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "user",
+                        ":username"
+                      ],
+                      "variable": [
+                        {
+                          "key": "username"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n \"id\": \"<long>\",\n \"username\": \"<string>\",\n \"firstName\": \"<string>\",\n \"lastName\": \"<string>\",\n \"email\": \"<string>\",\n \"password\": \"<string>\",\n \"phone\": \"<string>\",\n \"userStatus\": \"<integer>\"\n}"
+                },
+                {
+                  "id": "2fcb94fb-11f0-466f-90f6-c820d91d9f49",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/user/:username",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "user",
+                        ":username"
+                      ],
+                      "variable": [
+                        {
+                          "key": "username"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}"
+                }
+              ]
+            },
+            {
+              "name": "Updated user",
+              "_postman_id": "c4e872c4-b0a5-471f-bb3c-a533d14b13cf",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"<string>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {}
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/user/:username",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "user",
+                    ":username"
+                  ],
+                  "variable": [
+                    {
+                      "id": "e06a7cc1-89ec-4564-b1e0-dcbe7681a6a0",
+                      "key": "username",
+                      "value": "<string>",
+                      "type": "string",
+                      "description": "(Required) (Required) name that need to be updated"
+                    }
+                  ]
+                },
+                "description": "This can only be done by the logged in user."
+              },
+              "response": [
+                {
+                  "id": "30fc8a8f-d2ba-41a0-bb9d-11e1914f8cfc",
+                  "name": "response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "Content-Type",
+                        "value": "<string>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"id\": \"<string>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<string>\"\n}"
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/user/:username",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "user",
+                        ":username"
+                      ],
+                      "variable": [
+                        {
+                          "key": "username"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/plain"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": ""
+                },
+                {
+                  "id": "a037b6b9-e586-4856-995d-a3da7da7a2fb",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "Content-Type",
+                        "value": "<string>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"id\": \"<string>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<string>\"\n}"
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/user/:username",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "user",
+                        ":username"
+                      ],
+                      "variable": [
+                        {
+                          "key": "username"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}"
+                },
+                {
+                  "id": "a5db97e6-f22f-44e6-b536-1e887dbe8f1a",
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "Content-Type",
+                        "value": "<string>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"id\": \"<string>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<string>\"\n}"
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/user/:username",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "user",
+                        ":username"
+                      ],
+                      "variable": [
+                        {
+                          "key": "username"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}"
+                }
+              ]
+            },
+            {
+              "name": "Delete user",
+              "_postman_id": "c8303e80-4733-4612-806c-f117ae3e7ae2",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/user/:username",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "user",
+                    ":username"
+                  ],
+                  "variable": [
+                    {
+                      "id": "4fa8957d-bf81-44c4-b581-6b1f0cb7c289",
+                      "key": "username",
+                      "value": "<string>",
+                      "type": "string",
+                      "description": "(Required) (Required) The name that needs to be deleted"
+                    }
+                  ]
+                },
+                "description": "This can only be done by the logged in user."
+              },
+              "response": [
+                {
+                  "id": "4ba7ec9c-f4a7-4c59-80a1-a076d49756f2",
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/user/:username",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "user",
+                        ":username"
+                      ],
+                      "variable": [
+                        {
+                          "key": "username"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}"
+                },
+                {
+                  "id": "77449ad4-a075-48ff-a5f8-a827bcda51fd",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/user/:username",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "user",
+                        ":username"
+                      ],
+                      "variable": [
+                        {
+                          "key": "username"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}"
+                },
+                {
+                  "id": "9a4ecb22-b8dd-4251-a1ca-d64eb85d71c7",
+                  "name": "response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: apikey",
+                          "type": "text/plain"
+                        },
+                        "key": "api_key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/user/:username",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "user",
+                        ":username"
+                      ],
+                      "variable": [
+                        {
+                          "key": "username"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/plain"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": ""
+                }
+              ]
+            }
+          ],
+          "_postman_id": "3a30e864-29a1-471f-bc13-2d7c5831041a",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Create user",
+          "_postman_id": "c1cd467f-6619-492e-88c7-e3804de0cdad",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "Content-Type",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<string>\"\n}",
+              "options": {
+                "raw": {}
+              }
+            },
+            "url": "{{baseUrl}}/user",
+            "description": "This can only be done by the logged in user."
+          },
+          "response": [
+            {
+              "id": "09fdca6d-4b22-4920-8c46-ecf0cc097796",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"<string>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<string>\"\n}"
+                },
+                "url": "{{baseUrl}}/user"
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}"
+            },
+            {
+              "id": "9bd1cb7f-090c-4eb0-9d7f-259c03cee9c1",
+              "name": "response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": \"<string>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<string>\"\n}"
+                },
+                "url": "{{baseUrl}}/user"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Creates list of users with given input array",
+          "_postman_id": "4e3ce440-de1d-431d-b3e1-2db3072fc0e6",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "Content-Type",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"id\": \"<string>\",\n        \"username\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"phone\": \"<string>\",\n        \"userStatus\": \"<string>\"\n    },\n    {\n        \"id\": \"<string>\",\n        \"username\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"phone\": \"<string>\",\n        \"userStatus\": \"<string>\"\n    }\n]",
+              "options": {
+                "raw": {}
+              }
+            },
+            "url": "{{baseUrl}}/user/createWithArray"
+          },
+          "response": [
+            {
+              "id": "2c8c4da3-6b48-42ae-adf5-4a1289b4efed",
+              "name": "response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  }
+                ],
+                "url": "{{baseUrl}}/user/createWithArray"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "d91d853c-4a08-4617-8737-b9ff584d9078",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  }
+                ],
+                "url": "{{baseUrl}}/user/createWithArray"
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}"
+            }
+          ]
+        },
+        {
+          "name": "Creates list of users with given input array1",
+          "_postman_id": "3e35263e-4ef1-4962-b5d7-2134da492b4a",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "Content-Type",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"id\": \"<string>\",\n        \"username\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"phone\": \"<string>\",\n        \"userStatus\": \"<string>\"\n    },\n    {\n        \"id\": \"<string>\",\n        \"username\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"phone\": \"<string>\",\n        \"userStatus\": \"<string>\"\n    }\n]",
+              "options": {
+                "raw": {}
+              }
+            },
+            "url": "{{baseUrl}}/user/createWithList"
+          },
+          "response": [
+            {
+              "id": "1617a4e0-4e09-427e-a842-019247efa6b2",
+              "name": "response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  }
+                ],
+                "url": "{{baseUrl}}/user/createWithList"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            },
+            {
+              "id": "b9480223-0c8c-4458-b67b-2b85bc6d95e5",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "description": "(Required) ",
+                    "key": "Content-Type",
+                    "value": "<string>"
+                  }
+                ],
+                "url": "{{baseUrl}}/user/createWithList"
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}"
+            }
+          ]
+        },
+        {
+          "name": "Logs user into the system",
+          "_postman_id": "e1d35814-cc41-47cc-8c65-833957f5ae8c",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/login?username=<string>&password=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "login"
+              ],
+              "query": [
+                {
+                  "description": "(Required) (Required) The user name for login",
+                  "key": "username",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) (Required) The password for login in clear text",
+                  "key": "password",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "07a96867-1d56-4bd4-9240-cf29c00a9554",
+              "name": "response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/user/login?username=<string>&password=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "user",
+                    "login"
+                  ],
+                  "query": [
+                    {
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "description": "",
+                  "key": "X-Expires-After",
+                  "value": "2004-12-01T18:08:57.194Z"
+                },
+                {
+                  "description": "",
+                  "key": "X-Rate-Limit",
+                  "value": "-16172929"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "\"\\\"in in proident Lorem\\\"\""
+            },
+            {
+              "id": "a3c51087-0506-4e5a-bc67-f797afa3306a",
+              "name": "Bad Request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/user/login?username=<string>&password=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "user",
+                    "login"
+                  ],
+                  "query": [
+                    {
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}"
+            }
+          ]
+        },
+        {
+          "name": "Logs out current logged in user session",
+          "_postman_id": "4f6718fa-0290-4859-9daa-108fd429aaa7",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/user/logout"
+          },
+          "response": [
+            {
+              "id": "b096a52b-05a5-4835-800d-aae4bc3e8b9d",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": "{{baseUrl}}/user/logout"
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}"
+            },
+            {
+              "id": "f6e0b679-1970-466b-9ac2-fdab000c54c8",
+              "name": "response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": "{{baseUrl}}/user/logout"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": ""
+            }
+          ]
+        }
+      ],
+      "_postman_id": "3b48a768-6011-4a0a-b0bd-269e23fedac7"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": {
+      "key": "api_key",
+      "value": true,
+      "in": "header"
+    }
+  },
+  "variable": [
+    {
+      "id": "baseUrl",
+      "key": "baseUrl",
+      "value": "https://petstore.swagger.io/v2",
+      "type": "string"
+    }
+  ]
+}
